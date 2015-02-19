@@ -1,0 +1,9 @@
+.\main.o: main.c
+.\main.o: C:\ti\TivaWare_C_Series-2.0.1.11577\inc/tm4c123gh6pm.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\main.o: C:\ti\TivaWare_C_Series-2.0.1.11577\inc/hw_memmap.h
+.\main.o: C:\ti\TivaWare_C_Series-2.0.1.11577\inc/hw_types.h
+.\main.o: lcd_1602_lm4f.h
+.\main.o: systick.h
+.\main.o: pll.h

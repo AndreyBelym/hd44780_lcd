@@ -1,0 +1,320 @@
+******************************************************************************
+                  TMS470 Linker PC v4.9.1                      
+******************************************************************************
+>> Linked Thu Jun 28 16:42:25 2012
+
+OUTPUT FILE NAME:   <LCD_1968.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000007a5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0000087a  0003f786  R  X
+  SRAM                  20000000   00010000  00000118  0000fee8  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000880   00000880    r-x
+  00000000    00000000    000000f0   000000f0    r-- .intvecs
+  000000f0    000000f0    00000752   00000752    r-x .text
+  00000848    00000848    00000038   00000038    r-- .cinit
+20000000    20000000    00000100   00000000    rw-
+  20000000    20000000    00000100   00000000    rw- .stack
+20000100    20000100    00000018   00000014    rw-
+  20000100    20000100    00000014   00000014    rw- .data
+  20000114    20000114    00000004   00000000    rw- .bss
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000f0     
+                  00000000    000000f0     startup_ccsExperimental.obj (.intvecs)
+
+.text      0    000000f0    00000752     
+                  000000f0    000001f8     lcd.obj (.text)
+                  000002e8    00000128     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  00000410    0000009e     startup_ccsExperimental.obj (.text)
+                  000004ae    0000009c     rtsv7M3_T_le_eabi.lib : memcpy_t2.obj (.text)
+                  0000054a    00000002     --HOLE-- [fill = 0]
+                  0000054c    00000094                           : auto_init.obj (.text)
+                  000005e0    00000078     SysTick.obj (.text)
+                  00000658    00000060     LCDTestMain.obj (.text)
+                  000006b8    0000005e     rtsv7M3_T_le_eabi.lib : copy_decompress_rle.obj (.text)
+                  00000716    00000002     --HOLE-- [fill = 0]
+                  00000718    00000048                           : cpy_tbl.obj (.text)
+                  00000760    00000044                           : exit.obj (.text)
+                  000007a4    00000034                           : boot.obj (.text)
+                  000007d8    00000018                           : _lock.obj (.text)
+                  000007f0    00000018                           : args_main.obj (.text)
+                  00000808    00000014     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  0000081c    00000012     rtsv7M3_T_le_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  0000082e    0000000e                           : copy_decompress_none.obj (.text:decompress:none)
+                  0000083c    00000006                           : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.cinit     0    00000848    00000038     
+                  00000848    0000000f     (.cinit..data.load) [load image, compression = rle]
+                  00000857    00000001     --HOLE-- [fill = 0]
+                  00000858    0000000c     (__TI_handler_table)
+                  00000864    00000004     --HOLE-- [fill = 0]
+                  00000868    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00000870    00000010     (__TI_cinit_table)
+
+.stack     0    20000000    00000100     UNINITIALIZED
+                  20000000    00000100     --HOLE--
+
+.data      0    20000100    00000014     
+                  20000100    00000008     rtsv7M3_T_le_eabi.lib : _lock.obj (.data)
+                  20000108    00000008                           : exit.obj (.data)
+                  20000110    00000004                           : stkdepth_vars.obj (.data)
+
+.bss       0    20000114    00000004     UNINITIALIZED
+                  20000114    00000004     driverlib.lib : sysctl.obj (.bss)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00000870 records: 2, size/record: 8, table size: 16
+	.data: load addr=00000848, load size=0000000f bytes, run addr=20000100, run size=00000014 bytes, compression=rle
+	.bss: load addr=00000868, load size=00000008 bytes, run addr=20000114, run size=00000004 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000858 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000447   ADC0_Handler
+00000449   ADC1_Handler
+0000044b   ADC2_Handler
+0000044d   ADC3_Handler
+00000761   C$$EXIT
+00000479   CAN0_Handler
+0000047b   CAN1_Handler
+0000047d   CAN2_Handler
+0000045d   Comp0_Handler
+0000045f   Comp1_Handler
+00000461   Comp2_Handler
+0000048b   DisableInterrupts
+00000491   EnableInterrupts
+000004a1   EndCritical
+0000047f   Ethernet_Handler
+00000465   FlashCtl_Handler
+0000042b   GPIOPortA_Handler
+0000042d   GPIOPortB_Handler
+0000042f   GPIOPortC_Handler
+00000431   GPIOPortD_Handler
+00000433   GPIOPortE_Handler
+00000467   GPIOPortF_Handler
+00000469   GPIOPortG_Handler
+0000046b   GPIOPortH_Handler
+00000481   Hibernate_Handler
+0000043b   I2C0_Handler
+00000475   I2C1_Handler
+00000429   IntDefaultHandler
+00000209   LCD_Clear
+0000012b   LCD_Init
+000001cf   LCD_OutChar
+00000225   LCD_OutString
+00000243   LCD_OutUDec
+00000273   LCD_OutUHex
+000000f1   OutCmd
+0000043f   PWM0_Handler
+00000441   PWM1_Handler
+00000443   PWM2_Handler
+00000485   PWM3_Handler
+0000043d   PWMFault_Handler
+00000425   PendSV_Handler
+00000445   Quadrature0_Handler
+00000477   Quadrature1_Handler
+00000439   SSI0_Handler
+0000046f   SSI1_Handler
+00000497   StartCritical
+000002e9   SysCtlClockSet
+00000809   SysCtlDelay
+00000463   SysCtl_Handler
+00000427   SysTick_Handler
+000005e1   SysTick_Init
+000005fd   SysTick_Wait
+00000623   SysTick_Wait10ms
+00000451   Timer0A_Handler
+00000453   Timer0B_Handler
+00000455   Timer1A_Handler
+00000457   Timer1B_Handler
+00000459   Timer2A_Handler
+0000045b   Timer2B_Handler
+00000471   Timer3A_Handler
+00000473   Timer3B_Handler
+00000435   UART0_Handler
+00000437   UART1_Handler
+0000046d   UART2_Handler
+00000483   USB0_Handler
+0000044f   WDT_Handler
+000004a9   WaitForInterrupt
+20000100   __STACK_END
+00000100   __STACK_SIZE
+20000100   __STACK_TOP
+00000870   __TI_CINIT_Base
+00000880   __TI_CINIT_Limit
+00000858   __TI_Handler_Table_Base
+00000864   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+0000054d   __TI_auto_init
+0000082f   __TI_decompress_none
+0000083d   __TI_decompress_rle24
+00000000   __TI_static_base__
+0000081d   __TI_zero_init
+000004af   __aeabi_memcpy
+000004af   __aeabi_memcpy4
+000004af   __aeabi_memcpy8
+ffffffff   __binit__
+ffffffff   __c_args__
+20000000   __stack
+000007f1   _args_main
+000007a5   _c_int00
+20000108   _cleanup_ptr
+2000010c   _dtors_ptr
+20000100   _lock
+000007e5   _nop
+000007df   _register_lock
+000007d9   _register_unlock
+20000104   _unlock
+00000765   abort
+ffffffff   binit
+00000719   copy_in
+0000076d   exit
+00000000   g_pfnVectors
+20000114   g_ulInlineCCSWorkaround
+00000659   main
+20000110   main_func_sp
+000004af   memcpy
+00000489   uDMA_Error
+00000487   uDMA_Handler
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+000000f1   OutCmd
+00000100   __STACK_SIZE
+0000012b   LCD_Init
+000001cf   LCD_OutChar
+00000209   LCD_Clear
+00000225   LCD_OutString
+00000243   LCD_OutUDec
+00000273   LCD_OutUHex
+000002e9   SysCtlClockSet
+00000425   PendSV_Handler
+00000427   SysTick_Handler
+00000429   IntDefaultHandler
+0000042b   GPIOPortA_Handler
+0000042d   GPIOPortB_Handler
+0000042f   GPIOPortC_Handler
+00000431   GPIOPortD_Handler
+00000433   GPIOPortE_Handler
+00000435   UART0_Handler
+00000437   UART1_Handler
+00000439   SSI0_Handler
+0000043b   I2C0_Handler
+0000043d   PWMFault_Handler
+0000043f   PWM0_Handler
+00000441   PWM1_Handler
+00000443   PWM2_Handler
+00000445   Quadrature0_Handler
+00000447   ADC0_Handler
+00000449   ADC1_Handler
+0000044b   ADC2_Handler
+0000044d   ADC3_Handler
+0000044f   WDT_Handler
+00000451   Timer0A_Handler
+00000453   Timer0B_Handler
+00000455   Timer1A_Handler
+00000457   Timer1B_Handler
+00000459   Timer2A_Handler
+0000045b   Timer2B_Handler
+0000045d   Comp0_Handler
+0000045f   Comp1_Handler
+00000461   Comp2_Handler
+00000463   SysCtl_Handler
+00000465   FlashCtl_Handler
+00000467   GPIOPortF_Handler
+00000469   GPIOPortG_Handler
+0000046b   GPIOPortH_Handler
+0000046d   UART2_Handler
+0000046f   SSI1_Handler
+00000471   Timer3A_Handler
+00000473   Timer3B_Handler
+00000475   I2C1_Handler
+00000477   Quadrature1_Handler
+00000479   CAN0_Handler
+0000047b   CAN1_Handler
+0000047d   CAN2_Handler
+0000047f   Ethernet_Handler
+00000481   Hibernate_Handler
+00000483   USB0_Handler
+00000485   PWM3_Handler
+00000487   uDMA_Handler
+00000489   uDMA_Error
+0000048b   DisableInterrupts
+00000491   EnableInterrupts
+00000497   StartCritical
+000004a1   EndCritical
+000004a9   WaitForInterrupt
+000004af   __aeabi_memcpy
+000004af   __aeabi_memcpy4
+000004af   __aeabi_memcpy8
+000004af   memcpy
+0000054d   __TI_auto_init
+000005e1   SysTick_Init
+000005fd   SysTick_Wait
+00000623   SysTick_Wait10ms
+00000659   main
+00000719   copy_in
+00000761   C$$EXIT
+00000765   abort
+0000076d   exit
+000007a5   _c_int00
+000007d9   _register_unlock
+000007df   _register_lock
+000007e5   _nop
+000007f1   _args_main
+00000809   SysCtlDelay
+0000081d   __TI_zero_init
+0000082f   __TI_decompress_none
+0000083d   __TI_decompress_rle24
+00000858   __TI_Handler_Table_Base
+00000864   __TI_Handler_Table_Limit
+00000870   __TI_CINIT_Base
+00000880   __TI_CINIT_Limit
+20000000   __stack
+20000100   __STACK_END
+20000100   __STACK_TOP
+20000100   _lock
+20000104   _unlock
+20000108   _cleanup_ptr
+2000010c   _dtors_ptr
+20000110   main_func_sp
+20000114   g_ulInlineCCSWorkaround
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+
+[106 symbols]

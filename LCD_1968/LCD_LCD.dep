@@ -1,0 +1,6 @@
+Dependencies for Project 'LCD', Target 'LCD': (DO NOT MODIFY !)
+F (.\Startup.s)(0x4BB255AA)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1" -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Luminary" -o "Startup.o" --depend "Startup.d")
+F (.\LCDTestMain.c)(0x4E3CB8D9)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.. -I..\..\.. -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Luminary" -o "lcdtestmain.o" --omf_browse "lcdtestmain.crf" --depend "lcdtestmain.d")
+F (.\lcd.c)(0x4E517D1B)(-c --device DLM -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.. -I..\..\.. -I "D:\Keil\ARM\INC\Luminary" -o "lcd.o" --omf_browse "lcd.crf" --depend "lcd.d")
+F (.\SysTick.c)(0x4E384B80)(-c --device DLM -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.. -I..\..\.. -I "D:\Keil\ARM\INC\Luminary" -o "systick.o" --omf_browse "systick.crf" --depend "systick.d")
+F (..\driverlib\rvmdk\driverlib.lib)(0x4C6193FA)()
